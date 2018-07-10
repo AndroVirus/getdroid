@@ -1,5 +1,5 @@
 #!/bin/bash
-# GetDroid v1.0
+# GetDroid v1.1
 # FUD Android Payload Generator and Listener
 # Coded by @thelinuxchoice
 # Github: https://github.com/thelinuxchoice/getdroid
