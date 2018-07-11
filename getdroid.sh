@@ -24,6 +24,8 @@ dependencies() {
 command -v javac > /dev/null 2>&1 || { echo >&2 "I require Java but it's not installed. Install it. Aborting."; exit 1; }
 command -v aapt > /dev/null 2>&1 || { echo >&2 "I require aapt but it's not installed. Install it. Aborting."; 
 exit 1; }
+command -v apksinger > /dev/null 2>&1 || { echo >&2 "I require apksinger but it's not installed. Install it. Aborting."; 
+exit 1; }
 command -v php > /dev/null 2>&1 || { echo >&2 "I require php but it's not installed. Install it. Aborting."; exit 1; }
 command -v ssh > /dev/null 2>&1 || { echo >&2 "I require ssh but it's not installed. Install it. Aborting."; 
 exit 1; }
@@ -136,7 +138,7 @@ dx --dex --output=bin/classes.dex obj/
 aapt package -f -m -F bin/$payload_name.apk -M AndroidManifest.xml -S res/ -I tools/android-sdk/platforms/android-19/android.jar
 cp bin/classes.dex .
 aapt add bin/$payload_name.apk classes.dex > /dev/null
-echo "      " | ./tools/apksigner.jar sign --ks tools/key.keystore bin/$payload_name.apk > /dev/null
+echo "      " | apksigner sign --ks tools/key.keystore bin/$payload_name.apk > /dev/null
 mv bin/$payload_name.apk $payload_name.apk
 rm -rf classes.dex
 }
