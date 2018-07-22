@@ -24,7 +24,7 @@ dependencies() {
 command -v javac > /dev/null 2>&1 || { echo >&2 "I require Java but it's not installed. Install it. Aborting."; exit 1; }
 command -v aapt > /dev/null 2>&1 || { echo >&2 "I require aapt but it's not installed. Install it. Aborting."; 
 exit 1; }
-command -v apksigner > /dev/null 2>&1 || { echo >&2 "I require apksinger but it's not installed. Install it. Aborting."; 
+command -v apksigner > /dev/null 2>&1 || { echo >&2 "I require apksigner but it's not installed. Install it. Aborting."; 
 exit 1; }
 command -v php > /dev/null 2>&1 || { echo >&2 "I require php but it's not installed. Install it. Aborting."; exit 1; }
 command -v ssh > /dev/null 2>&1 || { echo >&2 "I require ssh but it's not installed. Install it. Aborting."; 
