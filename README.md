@@ -19,7 +19,7 @@ bash getdroid.sh
 
 ### Requirements (Android-SDK, APKSinger) :
 ```
-apt-get install android-sdk apksinger -y
+apt-get install android-sdk apksigner -y
 
 ```
 
